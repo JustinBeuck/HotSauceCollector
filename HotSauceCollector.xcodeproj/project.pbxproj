@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D06C9AA51E7CC92700143744 /* _hotones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D06C9AA41E7CC92700143744 /* _hotones.jpg */; };
 		D07E18781E7B847300020CA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E18771E7B847300020CA2 /* AppDelegate.swift */; };
 		D07E187A1E7B847300020CA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E18791E7B847300020CA2 /* ViewController.swift */; };
 		D07E187D1E7B847300020CA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07E187B1E7B847300020CA2 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D06C9AA41E7CC92700143744 /* _hotones.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = _hotones.jpg; sourceTree = "<group>"; };
 		D07E18741E7B847300020CA2 /* HotSauceCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotSauceCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07E18771E7B847300020CA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07E18791E7B847300020CA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		D07E18761E7B847300020CA2 /* HotSauceCollector */ = {
 			isa = PBXGroup;
 			children = (
+				D06C9AA41E7CC92700143744 /* _hotones.jpg */,
 				D07E18771E7B847300020CA2 /* AppDelegate.swift */,
 				D07E18791E7B847300020CA2 /* ViewController.swift */,
 				D07E187B1E7B847300020CA2 /* Main.storyboard */,
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07E18851E7B847300020CA2 /* LaunchScreen.storyboard in Resources */,
+				D06C9AA51E7CC92700143744 /* _hotones.jpg in Resources */,
 				D07E18821E7B847300020CA2 /* Assets.xcassets in Resources */,
 				D07E187D1E7B847300020CA2 /* Main.storyboard in Resources */,
 			);
@@ -301,6 +305,7 @@
 				D07E188B1E7B847300020CA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
