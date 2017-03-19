@@ -12,6 +12,9 @@ class HotSauceViewController: UIViewController {
 
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var hotSauceImageView: UIImageView!
+    
+    var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
