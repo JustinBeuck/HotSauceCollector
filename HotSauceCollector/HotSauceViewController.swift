@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HotSauceViewController: UIViewController {
+class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var hotSauceImageView: UIImageView!
@@ -18,12 +18,18 @@ class HotSauceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imagePicker.delegate = self
     }
     @IBAction func photosTapped(_ sender: Any) {
+        
+        imagePicker.sourceType = .photoLibrary
+        
     }
 
     @IBAction func cameraTapped(_ sender: Any) {
+        
+        imagePicker.sourceType = .camera
+        
     }
     @IBAction func addTapped(_ sender: Any) {
     }
