@@ -24,7 +24,14 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
         
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
+        hotSauceImageView.image = image
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cameraTapped(_ sender: Any) {
@@ -33,6 +40,12 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     @IBAction func addTapped(_ sender: Any) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let hotSauce = HotSauce(context: context)
+        
+        
     }
 
 }
