@@ -23,6 +23,7 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func photosTapped(_ sender: Any) {
         
         imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
         
     }
 
