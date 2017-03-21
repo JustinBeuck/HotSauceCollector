@@ -43,11 +43,15 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func addTapped(_ sender: Any) {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         let hotSauce = HotSauce(context: context)
-        let scovilleNumber = Int(scovilleLevel.text!)!
+        let scovilleNumber = Int64(scovilleLevel.text!)
+ 
         hotSauce.name = titleTextField.text
-        hotSauce.scovilleLevel = Int16(scovilleNumber)
+        hotSauce.scovilleLevel = scovilleNumber!
+        
+        hotSauce.image = UIImagePNGRepresentation(hotSauceImageView.image!) as NSData?
+     
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
 
        
         
