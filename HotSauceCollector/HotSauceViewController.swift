@@ -12,6 +12,7 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
 
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var hotSauceImageView: UIImageView!
+    @IBOutlet var scovilleLevel: UITextField!
     
     var imagePicker = UIImagePickerController()
     
@@ -44,7 +45,11 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let hotSauce = HotSauce(context: context)
-        
+        let scovilleNumber = Int(scovilleLevel.text!)!
+        hotSauce.name = titleTextField.text
+        hotSauce.scovilleLevel = Int16(scovilleNumber)
+
+       
         
         
     }
