@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="FfG-Nf-Rut">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UaF-lD-jcc">
                             <connections>
-                                <segue destination="l8s-6S-RdQ" kind="show" id="1r1-KR-a1c"/>
+                                <segue destination="l8s-6S-RdQ" kind="show" identifier="hotSauceSegue" id="1r1-KR-a1c"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,6 +91,14 @@
                                     <action selector="addTapped:" destination="l8s-6S-RdQ" eventType="touchUpInside" id="7pE-9w-Bbs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOZ-0Y-YZX">
+                                <rect key="frame" x="165" y="369" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="l8s-6S-RdQ" eventType="touchUpInside" id="jsN-c7-4od"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -122,6 +130,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addupdatebutton" destination="2Qm-YZ-pxj" id="1ek-6p-7xC"/>
+                        <outlet property="deleteButton" destination="gOZ-0Y-YZX" id="tAT-T4-kKJ"/>
                         <outlet property="hotSauceImageView" destination="l9Z-Ej-kbI" id="o6w-d0-gHR"/>
                         <outlet property="scovilleLevel" destination="jca-8M-qNm" id="eKL-dD-OQz"/>
                         <outlet property="titleTextField" destination="0ls-Cy-ZV2" id="U9c-Wi-LpF"/>
@@ -136,7 +146,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UGt-vV-7UY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pba-g5-dp1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pba-g5-dp1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

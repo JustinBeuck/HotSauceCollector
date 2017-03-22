@@ -49,6 +49,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.detailTextLabel?.text = String(hotSauce.scovilleLevel)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let hotSauce = hotSauces[indexPath.row]
+        performSegue(withIdentifier: "hotSauceSegue", sender: hotSauce)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! HotSauceViewController
+        nextVC.hotSauce = sender as? HotSauce
+    }
 
 
 }

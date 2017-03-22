@@ -13,13 +13,26 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var hotSauceImageView: UIImageView!
     @IBOutlet var scovilleLevel: UITextField!
+    @IBOutlet var addupdatebutton: UIButton!
+    @IBOutlet var deleteButton: UIButton!
     
     var imagePicker = UIImagePickerController()
+    var hotSauce : HotSauce? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imagePicker.delegate = self
+        
+        if hotSauce != nil {
+            hotSauceImageView.image = UIImage(data: hotSauce!.image as! Data)
+            titleTextField.text = hotSauce!.name
+            scovilleLevel.text = String(hotSauce!.scovilleLevel)
+            
+            addupdatebutton.setTitle("Update", for: .normal)
+        } else {
+            deleteButton.isHidden = true
+        }
     }
     @IBAction func photosTapped(_ sender: Any) {
         
@@ -42,14 +55,24 @@ class HotSauceViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     @IBAction func addTapped(_ sender: Any) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let hotSauce = HotSauce(context: context)
-        let scovilleNumber = Int64(scovilleLevel.text!)
- 
-        hotSauce.name = titleTextField.text
-        hotSauce.scovilleLevel = scovilleNumber!
+        if hotSauce != nil {
+            hotSauce!.name = titleTextField.text
+            // hotSauce!.scovilleLevel = scovilleLevel!
+            
+            hotSauce!.image = UIImagePNGRepresentation(hotSauceImageView.image!) as NSData?
+            
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let hotSauce = HotSauce(context: context)
+            let scovilleNumber = Int64(scovilleLevel.text!)
+            
+            hotSauce.name = titleTextField.text
+            hotSauce.scovilleLevel = scovilleNumber!
+            
+            hotSauce.image = UIImagePNGRepresentation(hotSauceImageView.image!) as NSData?
+        }
         
-        hotSauce.image = UIImagePNGRepresentation(hotSauceImageView.image!) as NSData?
+        
      
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
 
