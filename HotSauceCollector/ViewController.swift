@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
         hotSauces = try context.fetch(HotSauce.fetchRequest())
+            tableView.reloadData()
         } catch {
             
         }
@@ -43,7 +44,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let hotSauce = hotSauces[indexPath.row]
-        cell.textLabel?.text = String(hotSauce.scovilleLevel)
+        cell.textLabel?.text = hotSauce.name
+        cell.imageView?.image = UIImage(data: hotSauce.image as! Data)
+        cell.detailTextLabel?.text = String(hotSauce.scovilleLevel)
         return cell
     }
 
